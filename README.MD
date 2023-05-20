@@ -1,4 +1,4 @@
-Here is the documentation for the https://gpt4free.crispypiez.repl.co/ API:
+Here is the documentation for the https://gpt4free.crispypiez.repl.co/ API
 
 API Documentation:
 
@@ -34,8 +34,9 @@ Generate a completion for the prompt "Hello !" using the bard model.
 
 Generate a completion for the prompt "What is the weather like today?" using the gpt-3.5-turbo model with internet access enabled.
 
-
 Examples:
+
+Generate a completion for the prompt "Hello !" using the bard model in Rust.
 
 Rust example:
 ```rust
@@ -77,6 +78,8 @@ reqwest = { version = "0.11", features = ["blocking", "json"] }
 openssl = { version = "0.10.40", features = ["vendored"] }
 ```
 
+Generate a completion for the prompt "Hello !" using the bard model in Python.
+
 Python example:
 
 ```python
@@ -97,8 +100,8 @@ response = requests.get(api_url, params=params)
 print(response.text)
 ```
 
+Generate a completion for the prompt "What is the weather like today?" using the gpt-3.5-turbo model with internet access enabled in NodeJS.
 
-Generate a completion for the prompt "Hello !" using the bard model in Python.
 
 JavaScript example:
 
