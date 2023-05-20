@@ -1,45 +1,56 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
- <meta charset="UTF-8">
- <meta name="viewport" content="width=device-width, initial-scale=1.0">
- <title>API Documentation</title>
- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/github.min.css">
- <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
- <script>hljs.highlightAll();</script>
-</head>
-<body>
- <h1>API Documentation</h1>
- <p>This is a sample API documentation containing code snippets in Rust, JavaScript, Python, and TOML.</p>
+<html>
+  <head>
+    <title>GPT API Example</title>
+  </head>
+  <body>
+    <h1>GPT API Example</h1>
+    <p>Generate a completion for the prompt "Hello !" using the bard model in Rust:</p>
+    <pre><code>use reqwest::blocking::Client;
 
- <h2>Rust</h2>
- <pre><code class="rust">
+use std::collections::HashMap;
+
 fn main() {
- println!("Hello, world!");
+ let url = "https://gpt4free.crispypiez.repl.co/";
+ let mut params = HashMap::new();
+ params.insert("prompt", "Hello !");
+ params.insert("model", "bard");
+ let client = Client::new();
+ let res = client.get(url)
+ .query(&params)
+ .send()
+ .unwrap()
+ .text()
+ .unwrap();
+ println!("Response: {}", res);
+}</code></pre>
+    <p>Generate a completion for the prompt "Hello !" using the bard model in Python:</p>
+    <pre><code>import requests
+
+api_url = "https://gpt4free.crispypiez.repl.co/"
+
+params = {
+ "prompt": "Hello !",
+ "model": "bard"
 }
- </code></pre>
 
- <h2>JavaScript</h2>
- <pre><code class="javascript">
-function hello() {
- console.log("Hello, world!");
-}
- </code></pre>
+response = requests.get(api_url, params=params)
 
- <h2>Python</h2>
- <pre><code class="python">
-def hello():
- print("Hello, world!")
+print(response.text)</code></pre>
+    <p>Generate a completion for the prompt "What is the weather like today?" using the gpt-3.5-turbo model with internet access enabled in NodeJS:</p>
+    <pre><code>const axios = require("axios");
 
-if __name__ == "__main__":
- hello()
- </code></pre>
+const api_url = "https://gpt4free.crispypiez.repl.co/";
 
- <h2>TOML</h2>
- <pre><code class="toml">
-[config]
-name = "sample"
-version = "1.0.0"
- </code></pre>
-</body>
+const params = {
+ prompt: "What is the weather like today?",
+ model: "gpt-3.5-turbo",
+ internetaccess: "true"
+};
+
+axios.get(api_url, { params })
+ .then(response => {
+ console.log(response.data);
+});</code></pre>
+  </body>
 </html>
