@@ -75,7 +75,7 @@ async fn main() -> Result<(), Box<dyn Error>> {
     let data = json!({
         "conversation_id": "",
         "action": "_ask",
-        "model": "Your Model Here",
+        "model": "gpt-4",
         "jailbreak": "default",
         "meta": {
             "id": "",
@@ -85,7 +85,7 @@ async fn main() -> Result<(), Box<dyn Error>> {
                 "content_type": "text",
                 "parts": [
                     {
-                        "content": "Your Prompt Here",
+                        "content": "Hello",
                         "role": "user"
                     }
                 ]
@@ -105,4 +105,50 @@ async fn main() -> Result<(), Box<dyn Error>> {
 
     Ok(())
 }
+```
+
+**Node.js Example**
+
+Here is a Node.js example using the `axios` library to interact with the BetterGPT4Free API:
+
+First, install the `axios` library:
+
+`npm install axios`
+
+
+Create a new JavaScript file and add the following code:
+```javascript
+const axios = require('axios');
+
+const url = 'https://bettergpt4free.crispypiez.repl.co/backend-api/v2/conversation';
+
+const data = {
+  conversation_id: '',
+  action: '_ask',
+  model: 'Your Model Here',
+  jailbreak: 'default',
+  meta: {
+    id: '',
+    content: {
+      conversation: [],  // Replace with your conversation history
+      internet_access: false,
+      content_type: 'text',
+      parts: [
+        {
+          content: 'Your Prompt Here',
+          role: 'user',
+        },
+      ],
+    },
+  },
+};
+
+axios.post(url, data, { headers: { 'Content-Type': 'application/json' } })
+  .then((response) => {
+    const messageContent = response.data.choices[0].message.content;
+    console.log(messageContent);
+  })
+  .catch((error) => {
+    console.error(error);
+  });
 ```
