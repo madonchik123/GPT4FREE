@@ -5,8 +5,11 @@ The BetterGPT4Free API allows you to interact with the BetterGPT4Free service to
 https://bettergpt4free.crispypiez.repl.co/backend-api/v2/conversation
 
 **Required Values**
+
 `internet_access`: A boolean value representing whether the model should have access to the internet while generating responses.
+
 `model`: A string value representing the name of the model you want to use.
+
 `prompt`: A string value representing the user input or prompt that the model should respond to.
 
 **Python Example**
