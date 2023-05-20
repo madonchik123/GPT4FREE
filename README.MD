@@ -152,4 +152,4 @@ axios.post(url, data, { headers: { 'Content-Type': 'application/json' } })
     console.error(error);
   });
 ```
-**THIS HAS NOTHING TO DO WITH OPENAI ORBGPT4FREE I JUST MADE INSTRUCTIONS NOTHING ELSE **
+**THIS HAS NOTHING TO DO WITH OPENAI OR GPT4FREE I JUST MADE INSTRUCTIONS NOTHING ELSE**
