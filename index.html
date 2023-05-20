@@ -2,11 +2,14 @@
 <html>
   <head>
     <title>GPT API Example</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/styles/default.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
   </head>
   <body>
     <h1>GPT API Example</h1>
     <p>Generate a completion for the prompt "Hello !" using the bard model in Rust:</p>
-    <pre><code>use reqwest::blocking::Client;
+    <pre><code class="language-rust">use reqwest::blocking::Client;
 
 use std::collections::HashMap;
 
@@ -25,7 +28,7 @@ fn main() {
  println!("Response: {}", res);
 }</code></pre>
     <p>Generate a completion for the prompt "Hello !" using the bard model in Python:</p>
-    <pre><code>import requests
+    <pre><code class="language-python">import requests
 
 api_url = "https://gpt4free.crispypiez.repl.co/"
 
@@ -38,7 +41,7 @@ response = requests.get(api_url, params=params)
 
 print(response.text)</code></pre>
     <p>Generate a completion for the prompt "What is the weather like today?" using the gpt-3.5-turbo model with internet access enabled in NodeJS:</p>
-    <pre><code>const axios = require("axios");
+    <pre><code class="language-javascript">const axios = require("axios");
 
 const api_url = "https://gpt4free.crispypiez.repl.co/";
 
