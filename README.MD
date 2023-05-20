@@ -37,6 +37,46 @@ Generate a completion for the prompt "What is the weather like today?" using the
 
 Examples:
 
+Rust example:
+```rust
+use reqwest::blocking::Client;
+
+use std::collections::HashMap;
+
+fn main() {
+
+ let url = "https://gpt4free.crispypiez.repl.co/";
+
+ let mut params = HashMap::new();
+
+ params.insert("prompt", "Hello !");
+
+ params.insert("model", "bard");
+
+ let client = Client::new();
+
+ let res = client.get(url)
+
+ .query(&params)
+
+ .send()
+
+ .unwrap()
+
+ .text()
+
+ .unwrap();
+
+ println!("Response: {}", res);
+
+}
+```
+```toml
+[dependencies]
+reqwest = { version = "0.11", features = ["blocking", "json"] }
+openssl = { version = "0.10.40", features = ["vendored"] }
+```
+
 Python example:
 
 ```python
