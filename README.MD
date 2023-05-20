@@ -18,7 +18,7 @@ Required:
 
 Optional:
 
-- messageid: An ID for the conversation (for context).
+- messageid: An ID for the conversation (not being used yet).
 
 - internetaccess: Enable/disable use of internet (for models that require it). Either 'true' or 'false'.
 
