@@ -51,7 +51,8 @@ message_content = response_data['choices'][0]['message']['content']
 print(message_content)
 ```
 **Rust Example**
-Here is a Rust example using the `reqwest` library to interact with the BetterGPT4Free API:Copy
+
+Here is a Rust example using the `reqwest` library to interact with the BetterGPT4Free API:
 
 Add the following dependencies to your `Cargo.toml`
 ```toml
