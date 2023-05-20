@@ -34,9 +34,6 @@ Generate a completion for the prompt "Hello !" using the bard model.
 
 Generate a completion for the prompt "What is the weather like today?" using the gpt-3.5-turbo model with internet access enabled.
 
-Add some script examples to this in python and js make sure to return whole docs when you added make a new line called examples and etc
-
-GPT Avatar
 
 Examples:
 
