@@ -4,7 +4,7 @@ The BetterGPT4Free API allows you to interact with the BetterGPT4Free service to
 **API Endpoint**
 https://bettergpt4free.crispypiez.repl.co/backend-api/v2/conversation
 
-**Required Values**
+**Required Values:**
 
 `internet_access`: A boolean value representing whether the model should have access to the internet while generating responses.
 
@@ -49,4 +49,59 @@ response = requests.post(url, headers=headers, data=json.dumps(data))
 response_data = json.loads(response.text)
 message_content = response_data['choices'][0]['message']['content']
 print(message_content)
+```
+**Rust Example**
+Here is a Rust example using the `reqwest` library to interact with the BetterGPT4Free API:Copy
+
+Add the following dependencies to your `Cargo.toml`
+```toml
+[dependencies]
+reqwest = { version = "0.11", features = ["json"] }
+tokio = { version = "1", features = ["full"] }
+serde_json = "1.0"
+```
+Now, create a new Rust file and add the following code:
+```rust
+use reqwest::Client;
+use serde_json::{json, Value};
+use std::error::Error;
+
+#[tokio::main]
+async fn main() -> Result<(), Box<dyn Error>> {
+    let url = "https://bettergpt4free.crispypiez.repl.co/backend-api/v2/conversation";
+    let client = Client::new();
+
+    let data = json!({
+        "conversation_id": "",
+        "action": "_ask",
+        "model": "Your Model Here",
+        "jailbreak": "default",
+        "meta": {
+            "id": "",
+            "content": {
+                "conversation": [],  // Replace with your conversation history
+                "internet_access": false,
+                "content_type": "text",
+                "parts": [
+                    {
+                        "content": "Your Prompt Here",
+                        "role": "user"
+                    }
+                ]
+            }
+        }
+    });
+
+    let response = client.post(url)
+        .json(&data)
+        .send()
+        .await?
+        .json::<Value>()
+        .await?;
+
+    let message_content = response["choices"][0]["message"]["content"].as_str().unwrap();
+    println!("{}", message_content);
+
+    Ok(())
+}
 ```
