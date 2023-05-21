@@ -152,4 +152,67 @@ axios.post(url, data, { headers: { 'Content-Type': 'application/json' } })
     console.error(error);
   });
 ```
+
+**ROBLOX LUA Example**
+```lua
+local http = game:GetService("HttpService")
+
+local url = "https://bettergpt4free.crispypiez.repl.co/backend-api/v2/conversation"
+
+local headers = {
+
+    ["Content-Type"] = "application/json"
+
+}
+
+local data = {
+
+    conversation_id = "",
+
+    action = "_ask",
+
+    model = "gpt-4",
+
+    jailbreak = "default",
+
+    meta = {
+
+        id = "",
+
+        content = {
+
+            conversation = {},  -- Replace with your conversation history
+
+            internet_access = false,
+
+            content_type = "text",
+
+            parts = {
+
+                {
+
+                    content = "Hello",
+
+                    role = "user"
+
+                }
+
+            }
+
+        }
+
+    }
+
+}
+
+local response = http:PostAsync(url, http:JSONEncode(data), Enum.HttpContentType.ApplicationJson, false, headers)
+
+local response_data = http:JSONDecode(response)
+
+local message_content = response_data.choices[1].message.content
+
+print(message_content)
+
+
+```
 **THIS HAS NOTHING TO DO WITH OPENAI OR GPT4FREE I JUST MADE INSTRUCTIONS NOTHING ELSE**
