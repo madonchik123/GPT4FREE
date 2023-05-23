@@ -6,8 +6,6 @@ https://bettergpt4free.crispypiez.repl.co/backend-api/v2/conversation
 
 **Required Values:**
 
-`internet_access`: A boolean value representing whether the model should have access to the internet while generating responses.
-
 `model`: A string value representing the name of the model you want to use `GPT-3.5-Turbo/GPT-4`.
 
 `prompt`: A string value representing the user input or prompt that the model should respond to.
