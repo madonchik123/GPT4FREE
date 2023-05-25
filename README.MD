@@ -23,24 +23,11 @@ headers = {
 }
 
 data = {
-    "conversation_id": "",
-    "action": "_ask",
-    "model": "gpt-4",
-    "jailbreak": "default",
-    "meta": {
-        "id": "",
-        "content": {
-            "conversation": [],  # Replace with your conversation history
-            "internet_access": False,
-            "content_type": "text",
-            "parts": [
-                {
-                    "content": "Hello",
-                    "role": "user"
-                }
-            ]
-        }
-    }
+"model": "gpt-4",
+"conversation": [],
+"prompt": "Hello",
+"stream": False,
+"temperature": 0.7
 }
 
 response = requests.post(url, headers=headers, data=json.dumps(data))
@@ -71,25 +58,12 @@ async fn main() -> Result<(), Box<dyn Error>> {
     let client = Client::new();
 
     let data = json!({
-        "conversation_id": "",
-        "action": "_ask",
-        "model": "gpt-4",
-        "jailbreak": "default",
-        "meta": {
-            "id": "",
-            "content": {
-                "conversation": [],  // Replace with your conversation history
-                "internet_access": false,
-                "content_type": "text",
-                "parts": [
-                    {
-                        "content": "Hello",
-                        "role": "user"
-                    }
-                ]
-            }
-        }
-    });
+"model": "gpt-4",
+"conversation": [],
+"prompt": "Hello",
+"stream": False,
+"temperature": 0.7
+});
 
     let response = client.post(url)
         .json(&data)
@@ -121,24 +95,11 @@ const axios = require('axios');
 const url = 'https://bettergpt4free.crispypiez.repl.co/backend-api/v2/conversation';
 
 const data = {
-  conversation_id: '',
-  action: '_ask',
-  model: 'gpt-4',
-  jailbreak: 'default',
-  meta: {
-    id: '',
-    content: {
-      conversation: [],  // Replace with your conversation history
-      internet_access: false,
-      content_type: 'text',
-      parts: [
-        {
-          content: 'Hello',
-          role: 'user',
-        },
-      ],
-    },
-  },
+"model": "gpt-4",
+"conversation": [],
+"prompt": "Hello",
+"stream": False,
+"temperature": 0.7
 };
 
 axios.post(url, data, { headers: { 'Content-Type': 'application/json' } })
@@ -164,44 +125,12 @@ local headers = {
 }
 
 local data = {
-
-    conversation_id = "",
-
-    action = "_ask",
-
-    model = "gpt-4",
-
-    jailbreak = "default",
-
-    meta = {
-
-        id = "",
-
-        content = {
-
-            conversation = {},  -- Replace with your conversation history
-
-            internet_access = false,
-
-            content_type = "text",
-
-            parts = {
-
-                {
-
-                    content = "Hello",
-
-                    role = "user"
-
-                }
-
-            }
-
-        }
-
-    }
-
-}
+"model": "gpt-4",
+"conversation": [],
+"prompt": "Hello",
+"stream": False,
+"temperature": 0.7
+};
 
 local response = http:PostAsync(url, http:JSONEncode(data), Enum.HttpContentType.ApplicationJson, false, headers)
 
