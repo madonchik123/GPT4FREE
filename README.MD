@@ -10,6 +10,11 @@ https://bettergpt4free.crispypiez.repl.co/backend-api/v2/conversation
 
 `prompt`: A string value representing the user input or prompt that the model should respond to.
 
+`temperature`: A string value representing the temperature(creativity) for the bot.
+
+`stream`: A bool value that represents if response should be streamed (Coming Soon).
+
+
 **Python Example**
 Here is a Python example using the requests library to interact with the BetterGPT4Free API:
 
