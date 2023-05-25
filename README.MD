@@ -37,8 +37,7 @@ data = {
 
 response = requests.post(url, headers=headers, data=json.dumps(data))
 response_data = json.loads(response.text)
-message_content = response_data['choices'][0]['message']['content']
-print(message_content)
+print(response_data)
 ```
 **Rust Example**
 
@@ -77,7 +76,7 @@ async fn main() -> Result<(), Box<dyn Error>> {
         .json::<Value>()
         .await?;
 
-    let message_content = response["choices"][0]["message"]["content"].as_str().unwrap();
+    let message_content = response;
     println!("{}", message_content);
 
     Ok(())
@@ -109,7 +108,7 @@ const data = {
 
 axios.post(url, data, { headers: { 'Content-Type': 'application/json' } })
   .then((response) => {
-    const messageContent = response.data.choices[0].message.content;
+    const messageContent = response
     console.log(messageContent);
   })
   .catch((error) => {
@@ -141,7 +140,7 @@ local response = http:PostAsync(url, http:JSONEncode(data), Enum.HttpContentType
 
 local response_data = http:JSONDecode(response)
 
-local message_content = response_data.choices[1].message.content
+local message_content = response_data
 
 print(message_content)
 
