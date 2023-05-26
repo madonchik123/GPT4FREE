@@ -14,7 +14,7 @@ https://bettergpt4free.crispypiez.repl.co/backend-api/v2/conversation
 
 `stream`: A bool value that represents if response should be streamed (Coming Soon).
 
-
+`systemmessage`: A string that represents how the chatgpt will act
 **Python Example**
 Here is a Python example using the requests library to interact with the BetterGPT4Free API:
 
@@ -31,6 +31,7 @@ data = {
 "model": "gpt-4",
 "conversation": [],
 "prompt": "Hello",
+"systemmessage": "You are ChatGPT also known as ChatGPT, a large language model trained by OpenAI. Strictly follow the users instructions. Knowledge cutoff: 2021-09-01",
 "stream": False,
 "temperature": 0.7
 }
@@ -65,6 +66,7 @@ async fn main() -> Result<(), Box<dyn Error>> {
 "model": "gpt-4",
 "conversation": [],
 "prompt": "Hello",
+"systemmessage": "You are ChatGPT also known as ChatGPT, a large language model trained by OpenAI. Strictly follow the users instructions. Knowledge cutoff: 2021-09-01",
 "stream": False,
 "temperature": 0.7
 });
@@ -102,6 +104,7 @@ const data = {
 "model": "gpt-4",
 "conversation": [],
 "prompt": "Hello",
+"systemmessage": "You are ChatGPT also known as ChatGPT, a large language model trained by OpenAI. Strictly follow the users instructions. Knowledge cutoff: 2021-09-01",
 "stream": False,
 "temperature": 0.7
 };
@@ -132,6 +135,7 @@ local data = {
 "model": "gpt-4",
 "conversation": [],
 "prompt": "Hello",
+"systemmessage": "You are ChatGPT also known as ChatGPT, a large language model trained by OpenAI. Strictly follow the users instructions. Knowledge cutoff: 2021-09-01",
 "stream": False,
 "temperature": 0.7
 };
