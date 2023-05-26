@@ -12,9 +12,11 @@ https://bettergpt4free.crispypiez.repl.co/backend-api/v2/conversation
 
 `temperature`: A string value representing the temperature(creativity) for the bot.
 
-`stream`: A bool value that represents if response should be streamed (Coming Soon).
+`stream`: A bool value that represents if response should be streamed .
 
-`systemmessage`: A string that represents how the chatgpt will act
+`systemmessage`: A string that represents how the chatgpt will act.
+
+
 **Python Example**
 Here is a Python example using the requests library to interact with the BetterGPT4Free API:
 
